@@ -9,7 +9,6 @@ import ch.jalu.configme.resource.yaml.SnakeYamlNodeBuilder;
 import ch.jalu.configme.resource.yaml.SnakeYamlNodeBuilderImpl;
 import ch.jalu.configme.resource.yaml.SnakeYamlNodeContainer;
 import ch.jalu.configme.resource.yaml.SnakeYamlNodeContainerImpl;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.yaml.snakeyaml.DumperOptions;
@@ -128,6 +127,7 @@ public class YamlFileResource implements PropertyResource {
     protected @NotNull Yaml createSnakeYamlInstance() {
         DumperOptions options = new DumperOptions();
         options.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK);
+        options.setPrettyFlow(true);
         options.setAllowUnicode(true);
         options.setProcessComments(true);
         options.setIndent(this.options.getIndentationSize());
