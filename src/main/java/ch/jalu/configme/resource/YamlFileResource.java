@@ -127,6 +127,7 @@ public class YamlFileResource implements PropertyResource {
     protected @NotNull Yaml createSnakeYamlInstance() {
         DumperOptions options = new DumperOptions();
         options.setDefaultFlowStyle(DumperOptions.FlowStyle.BLOCK);
+        options.setDefaultScalarStyle(DumperOptions.ScalarStyle.DOUBLE_QUOTED);
         options.setPrettyFlow(true);
         options.setAllowUnicode(true);
         options.setProcessComments(true);
