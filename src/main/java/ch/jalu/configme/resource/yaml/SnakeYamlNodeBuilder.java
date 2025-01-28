@@ -46,8 +46,8 @@ public interface SnakeYamlNodeBuilder {
      * Transfers the comments from the value node to the key node. Logically, comments are associated with values,
      * but we do not want the comments to appear between the key and the value in the YAML output. Therefore, this
      * method is called before producing YAML as to move the comments from the value to the key node.
-     *
-     * @implNote Only considers {@link Node#getBlockComments() block comments} on the nodes because it's the only type
+     * <p>
+     * Only considers {@link Node#getBlockComments() block comments} on the nodes because it's the only type
      *           of comment that this builder sets. Any block comments on the key node are overwritten.
      *
      * @param valueNode the value node to remove the comments from
